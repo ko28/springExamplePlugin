@@ -1,20 +1,21 @@
 package io.armory.plugin.example.spring.services
 
-import com.netflix.spinnaker.kork.api.expressions.ExpressionFunctionProvider
-import com.netflix.spinnaker.orca.capabilities.CapabilitiesService
-import com.netflix.spinnaker.orca.capabilities.models.ExpressionCapabilityResult
-import org.pf4j.PluginManager
+import com.netflix.spinnaker.fiat.model.resources.Role
+import com.netflix.spinnaker.fiat.roles.file.FileBasedUserRolesProvider
+import com.netflix.spinnaker.fiat.permissions.ExternalUser
 
-class OverrideService(
-        expressionFunctionProviders: MutableList<ExpressionFunctionProvider>,
-        pluginManager: PluginManager?) : CapabilitiesService(expressionFunctionProviders,
-        pluginManager) {
+//import org.pf4j.PluginManager
+//import java.io.IOException
 
-    override fun getExpressionCapabilities() : ExpressionCapabilityResult {
-        val result = ExpressionCapabilityResult()
-        result.functions.add(super.getExpressionCapabilities().functions.get(0))
-        result.spelEvaluators.add(super.getExpressionCapabilities().spelEvaluators.get(0))
-        return result
+
+class OverrideService() { // : FileBasedUserRolesProvider()
+    override fun loadRoles(user: ExternalUser): List<Role> {
+        try {
+            return Optional.ofNullable(parse().get(user.getId()))
+                    .orElse(listOf(Role("public")))
+        } catch (io: IOException) {
+            log.error("Couldn't load roles for user " + user.getId().toString() + " from file", io)
+        }
+        return listOf<Role>(Role("public"))
     }
-
 }
