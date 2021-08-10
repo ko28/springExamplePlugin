@@ -1,0 +1,15 @@
+{
+    "id": "Armory.SpringExamplePlugin",
+    "description": "default role",
+    "provider": "https://github.com/ko28",
+    "releases": [
+        {
+            "version": "v1.10.0-SNAPSHOT",
+            "date": "2021-08-10T23:14:08.852243Z",
+            "requires": "fiat>=0.0.0",
+            "sha512sum": "8d5a6a4dc1962291e440ce7e81b3f043dc33d5815cd46f306904a181ae64cac83f6393b2caf9e481af215382001a62b7ce9b7208572eafa0775c93b0b35dc4dd",
+            "preferred": false,
+            "url": "https://github.com/ko28/springExamplePlugin/releases/download/v1.10.0-SNAPSHOT/springExamplePlugin-v1.10.0-SNAPSHOT.zip" 
+        }
+    ]
+}

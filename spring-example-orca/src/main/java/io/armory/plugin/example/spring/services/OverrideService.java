@@ -10,7 +10,9 @@ public class OverrideService extends FileBasedUserRolesProvider {
     @Override
     public List<Role> loadRoles(ExternalUser user) {
         List<Role> roles = super.loadRoles(user);
-        return roles.isEmpty()? Collections.singletonList(new Role("public")) : roles;
+        roles.add(new Role("public"));
+        return roles;
+        //return roles.isEmpty()? Collections.singletonList(new Role("public")) : roles;
     }
 
 
