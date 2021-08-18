@@ -5,19 +5,10 @@
         "provider": "https://github.com/ko28",
         "releases": [
             {
-                "version": "1.10.0",
-                "date": "2021-08-10T23:14:08.852243Z",
-                "requires": "fiat>=0.0.0",
-                "sha512sum": "8d5a6a4dc1962291e440ce7e81b3f043dc33d5815cd46f306904a181ae64cac83f6393b2caf9e481af215382001a62b7ce9b7208572eafa0775c93b0b35dc4dd",
-                "preferred": false,
-                "url": "https://github.com/ko28/springExamplePlugin/releases/download/v1.10.0-SNAPSHOT/springExamplePlugin-v1.10.0-SNAPSHOT.zip"
-            },
-            {
                 "version": "1.11.0",
                 "date": "2021-08-18T12:14:05.270231Z",
                 "requires": "fiat>=0.0.0",
                 "sha512sum": "bcb4dd67e55c0d029c0e875d4b1d7d98e89c923bb29ea2bb0979bd9f8ec4e51a9af4f18de2370c33abefcce616b3fde5c5b0a2f96822cad8a95ccbedf1bb9230",
-                "preferred": false,
                 "url": "https://github.com/ko28/springExamplePlugin/releases/download/1.11.0/springExamplePlugin-v1.11.0.zip"
             }
         ]
